@@ -1,6 +1,10 @@
 // ---- Define your dialogs  and panels here ----
-
-
+let new_perm = define_new_effective_permissions('p');
+$('#sidepanel').append(new_perm);
+let new_user = define_new_user_select_field('c' , 'select button', function(selected_user){
+    $('#p').attr('username', selected_user)
+})
+$('#sidepanel').append(new_user);
 
 // ---- Display file structure ----
 
