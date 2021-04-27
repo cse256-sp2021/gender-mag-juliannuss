@@ -1,13 +1,32 @@
 // ---- Define your dialogs  and panels here ----
-let new_perm = define_new_effective_permissions('p');
-$('#sidepanel').append(new_perm);
-let new_user = define_new_user_select_field('c' , 'select button', function(selected_user){
-    $('#p').attr('username', selected_user)
-})
-$('#sidepanel').append(new_user);
+// let new_perm = define_new_effective_permissions('p');
+// $('#sidepanel').append(new_perm);
+// let new_user = define_new_user_select_field('c' , 'select button', function(selected_user){
+//     $('#p').attr('username', selected_user)
+// })
+// $('#sidepanel').append(new_user);
 
 // ---- Display file structure ----
 
+let b = document.createElement('br');
+
+let welcome = document.createElement('h1');
+welcome.innerHTML = 'Welcome to this file permissions site'
+let remove = document.createElement('h2');
+remove.innerHTML = 'In order to edit permissions, click the lock button  next the file you want to edit '
+let step1 = document.createElement('p');
+step1.innerHTML = '1. After clicking the lock button, First select which employee or group you want to edit '
+let step2 = document.createElement('p');
+step2.innerHTML = '2. Then, Select which permissions you want to change NOTE: deny will override allow'
+let override = document.createElement('h3')
+override.innerHTML = 'IMPORTANT: Read_Execute will also select Read, Modify will also select Write, Full Control will also select all other permissions'
+$('#sidepanel').append(welcome);
+$('#sidepanel').append(b);
+$('#sidepanel').append(remove);
+$('#sidepanel').append(step1);
+$('#sidepanel').append(step2);
+$('#sidepanel').append(b);
+$('#sidepanel').append(override);
 // (recursively) makes and returns an html element (wrapped in a jquery object) for a given file object
 function make_file_element(file_obj) {
     let file_hash = get_full_path(file_obj)
