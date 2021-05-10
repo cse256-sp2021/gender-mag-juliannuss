@@ -19,14 +19,41 @@ step1.innerHTML = '1. After clicking the lock button, First select which employe
 let step2 = document.createElement('p');
 step2.innerHTML = '2. Then, Select which permissions you want to change NOTE: deny will override allow'
 let override = document.createElement('h3')
-override.innerHTML = 'IMPORTANT: Read_Execute will also select Read, Modify will also select Write, Full Control will also select all other permissions'
+let step3 = document.createElement('p');
+let step4 = document.createElement('p');
+let step5 = document.createElement('p');
+step3.innerHTML = "Read_Execute will also select Read"
+step4.innerHTML = "Modify will also select Write"
+step5.innerHTML = "Full Control will also select all other permissions"
+override.innerHTML = 'IMPORTANT: '
+let newperm = document.createElement('h2');
+newperm.innerHTML = "In order to add new permissons, first click on the lock icon, and then hit the 'Add' button under the username section";
+let trouble = document.createElement('h3')
+trouble.innerHTML = "Having trouble with some files being inaccesable in the Lecture_Notes folder? check the file titled 'Lecture3.txt' and add user options using the add button";
+let trouble2 = document.createElement('h3')
+trouble2.innerHTML = "Having trouble with teacher_assistant not being able to modify 'Lecture4.txt'? click the lock button next to this file and unclick the deny modify checkmark for the group students. "
+let trouble3 = document.createElement('h3');
+trouble3.innerHTML = "Want to change permissions for a specific person in a group? click the advanced button after clicking the lock icon and then hit edit to select which user you want to change"
 $('#sidepanel').append(welcome);
 $('#sidepanel').append(b);
 $('#sidepanel').append(remove);
 $('#sidepanel').append(step1);
 $('#sidepanel').append(step2);
 $('#sidepanel').append(b);
+$('#sidepanel').append(newperm);
 $('#sidepanel').append(override);
+$('#sidepanel').append(step3);
+$('#sidepanel').append(step4);
+$('#sidepanel').append(step5);
+$('#sidepanel').append(b);
+
+
+
+$('#sidepanel').append(trouble);
+$('#sidepanel').append(b);
+$('#sidepanel').append(trouble2);
+$('#sidepanel').append(b);
+$('#sidepanel').append(trouble3);
 // (recursively) makes and returns an html element (wrapped in a jquery object) for a given file object
 function make_file_element(file_obj) {
     let file_hash = get_full_path(file_obj)
